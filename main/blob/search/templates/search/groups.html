@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<form name="input" action="create/" method="get">
+Create a group: <input type="text" name="pq">
+<input type="submit" value="Submit">
+</form> 
+<h3>Your Group</h3>
+{% if pictures %}
+    <ul>
+        {% for pict in pictures %}
+            <li>{{ pict.name }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+<p>You are not present in any group</p>
+{% endif %}
+{% endblock %}

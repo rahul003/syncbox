@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block content %}
+<!--<div id="myCarousel" class="carousel slide">
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+  <!-- Carousel items -->
+ <!-- <div class="carousel-inner">
+    <div class="active item"> <img src="{{ STATIC_URL }}/img/0.jpg"></div>
+    <div class="item"><img src="{{ STATIC_URL }}/img/1.jpg"></div>
+    <div class="item"><img src="{{ STATIC_URL }}/img/2.jpg"></div>
+  </div>
+  <!-- Carousel nav -->
+ <!-- <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+</div>
+
+<form name="input" action="search/" method="get">
+Search file: <input type="text" name="sc">
+<input type="submit" value="Submit">
+</form> 
+
+{% if pictures %}
+    <ul>
+        {% for pict in pictures %}
+            <li><a href="{{ pict.file.url }}">{{ pict.file.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+<p>No Pictures.</p>
+{% endif %}-->
+
+<div class="featurette well">
+        <img class="featurette-image pull-right" src="http://syncbox.com/images/syncbox-logo-horiz.png">
+        <div class="row"><div class="span7"><h2 class="featurette-heading">Download SyncBox.  </h2>
+          <h2><span class="muted">Simplify your life</span> </h2> 
+        <p class="lead">Download this linux app to get started. Sorry Windows folks, we are Linux only for now!</p></div>
+        <div class="span2 offset1"><p><br /></p><button class="btn btn-success btn-large btn-block">Download</button></div></div>
+        
+      </div>
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="span4">
+          <img src="https://www.sugarsync.com/images/iris/features-sync.png" alt="140x140" class="img" data-src="holder.js/140x140">
+          <h2>Sync outside the box</h2>
+          <p>Your folders, your files, your choices. SugarSync doesn't box you in like the others — automatically sync any or all of your folders and files to the Cloud and to all your devices... wherever or whatever they might be. No more having to drag your stuff into some arbitrary "box".</p>
+        </div><!-- /.span4 -->
+        <div class="span4">
+          <img src="https://www.sugarsync.com/images/iris/features-backup.png" alt="140x140" class="img" data-src="holder.js/140x140">
+          <h2>We've got your back</h2>
+          <p>Hard drive crash? Drop your device? Hacked? No worries, all your digital stuff is safely and securely backed up to your Cloud with SyncBox. Since SyncBox backup is instant and automatic, the most recent version of your documents will always be accessible from any of your devices.</p>
+        </div><!-- /.span4 -->
+           <div class="span4">
+          <img src="https://www.sugarsync.com/images/iris/features-share.png" alt="140x140" class="img" data-src="holder.js/140x140">
+          <h2>Sharing made sweet</h2>
+          <p>Three bites into lunch and you receive an urgent text to send that huge presentation immediately? No problem, SugarSync to the rescue. With your files in SugarSync, you can instantly share them right from your mobile phone or tablet. Bam. Done. Back to your lunch, thanks to the Cloud.</p>
+        </div><!-- /.span4 -->
+
+      </div><!-- /.row -->
+
+
+{% endblock %}

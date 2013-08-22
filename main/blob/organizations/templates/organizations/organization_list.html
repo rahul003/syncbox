@@ -1,0 +1,17 @@
+{% extends "organizations_base.html" %}
+{% block content %}
+<h3>Groups</h3>
+<a href="add/"><button class="btn btn-primary">Add Group</button></a>
+<div class="row">
+	
+	<div class="span5">
+	<p></p>	
+<table class="table table-striped table-hover">
+    {% for organization in organizations %}
+    <tr><td><b><a href="{{ organization.get_absolute_url }}">{{ organization }}</a></b></td></tr>
+    {% endfor %}
+</table>
+</div>
+<div class="span6"><img src="http://mendipsnowsport.co.uk/wp-content/uploads/2012/05/Avon_ski_and_action_centre_groupsF.jpg"></div>
+</div>
+{% endblock %}

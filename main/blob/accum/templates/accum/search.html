@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<form name="input" action="search/" method="get">
+Search file: <input type="text" name="sc">
+<input type="submit" value="Submit">
+</form> 
+
+{% if pictures %}
+    <ul>
+        {% for pict in pictures %}
+            <li><a href="{{ pict.file.url }}">{{ pict.file.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+<p>No Pictures.</p>
+{% endif %}
+{% endblock %}

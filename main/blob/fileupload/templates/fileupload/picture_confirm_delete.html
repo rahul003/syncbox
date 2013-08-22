@@ -1,0 +1,18 @@
+{% extends "basefi.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="page-header">
+        <h1>Delete {{ object.file.name }}?</h1>
+    </div>
+    <img src="{{ object.file.url }}" alt="">
+
+    <form method="post" action="" class="form">{% csrf_token %}
+        <div class="form-actions">
+            <button type="submit" class="btn btn-danger"><i class="icon-trash icon-white"></i> Delete</button>
+            <button type="button" class="btn"><i class="icon-remove"></i><a href="/upload/new/">Cancel</a> </button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

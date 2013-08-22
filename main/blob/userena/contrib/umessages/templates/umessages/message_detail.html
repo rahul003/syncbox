@@ -1,0 +1,21 @@
+{% extends 'umessages/base_message.html' %}
+{% load i18n %}
+{% load url from future %}
+{% load bootstrap_toolkit %}
+{% block content_title %}<h2 class="content-title">Conversation with {{ recipient }}</h2>{% endblock %}
+
+{% block content %}
+<a href="{% url 'userena_umessages_compose_to' recipient.username %}" class="button"><span>{% trans "Reply" %}</span></a>
+<table id="messages" class="table table-striped">
+{% for message in message_list %}
+<tr><td class="{% if message.sender == user %}send{% else %}received{% endif %}">
+  <img src="{{ message.sender.my_profile.get_mugshot_url }}" class="avatar {% if message.sender == user %}send{% else %}received{% endif %}" />
+  <div class="message-content">
+    {{ message }}
+    {{ message.sent_at }}
+  </div>
+</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

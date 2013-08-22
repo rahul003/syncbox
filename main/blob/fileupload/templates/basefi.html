@@ -1,0 +1,84 @@
+<!--{% load bootstrap_toolkit %}-->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Blob</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Bootstrap CSS Toolkit styles -->
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.min.css">
+    <!-- Generic page styles -->
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css">
+    <style type="text/css">
+        body {
+            padding-top: 0px;
+        }
+    </style>
+    <!-- Bootstrap styles for responsive website layout, supporting different screen sizes -->
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap-responsive.min.css">
+    <!-- CSS to style the file input field as button and adjust the Bootstrap progress bars -->
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap-image-gallery.min.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/jquery.fileupload-ui.css">
+    <!-- Shim to make HTML5 elements usable in older Internet Explorer versions -->
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body id="{% block body_id %}{% endblock %}" class="{% block body_class %}{% endblock %}">
+
+<div class="navbar navbar-inverse">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="/">SyncBox</a>
+            <ul class="nav">
+                {% if not user.username %}
+                <li><a href="/accounts/signin">Signin</a></li>
+                <li><a href="/accounts/signup">Signup</a></li>
+                {% endif %}
+                {% if user.username %}
+                <li><a href="/share/">Share</a></li>
+                <li><a href="/accounts/signout">Signout</a></li>
+                <li><a href="/accounts/">Profiles</a></li>
+                <li><a href="/messages/">Messages</a></li>
+                <li><a href="/upload/new/">Upload</a></li>
+                <li><a href="/orgs/">Groups</a></li>
+                {% endif %}
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+          </div>
+        </div>
+    </div>
+
+<div class="container">
+
+    {% bootstrap_messages %}
+
+     <div id="body">
+    {% block body %}
+      <div class="content_title">
+        {% block content_title %}{% endblock %}
+      </div>
+      <div class="content">
+        
+        {% block content %}{% endblock %}
+     
+  </div>
+    {% endblock %}
+    </div>
+
+    <p><hr></p>
+
+    <footer class="row">
+        <div class="span6">
+            <p>This is <a href="https://github.com/iarpit/blob">Blob</a></p>
+        </div>
+        <div class="span6" style="text-align:right">
+            <p>
+                &copy; <a href="http://github.com/iarpit">Arpit Agrawal</a> 2013
+            </p>
+        </div>
+    </footer>
+
+</div> <!-- container -->
+
+</body>
+</html>

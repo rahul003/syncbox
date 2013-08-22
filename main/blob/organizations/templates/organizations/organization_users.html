@@ -1,0 +1,9 @@
+<table class="table-striped table">
+	
+    {% for organization_user in organization_users %}
+    <tr>
+    <td><a href="{{ organization_user.get_absolute_url }}">{{ organization_user }}</a>
+    {% if not organization_user.user.is_active %}Send reminder{% endif %}</td>
+    </tr>
+    {% endfor %}
+</table>

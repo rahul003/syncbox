@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<form name="input" action="fdsa/" method="get">
+Create a group: <input type="text" name="grouppp">
+<input type="submit" value="Submit">
+</form> 
+
+<h3>Your Group</h3>
+{% if pictures %}
+    <ul>
+        {% for pict in pictures %}
+            <form>
+            	<input type="checkbox" name="group" value="{{pict.name}}">{{ pict.name }}
+            </form>	
+        {% endfor %}
+    </ul>
+
+{% else %}
+<p>You are not present in any group</p>
+{% endif %}
+{% endblock %}

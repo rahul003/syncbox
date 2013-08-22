@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<form name="input" action="" method="get">
+Search and Share file: <input type="text" name="sc">
+<input type="submit" value="Submit">
+</form> 
+{% if mess %}
+	{{ mess }}
+{% endif %}
+
+{% if pictures %}
+	<h2>Share files</h2>
+	<form action="" method="post">
+		{% csrf_token %}
+    <ul>
+        {% for pict in pictures %}
+            <li><input class="required" type="checkbox" name="shpic" value="{{ pict.file.url }}"><a href="{{ pict.file.url }}">{{ pict.file.name }}</a></li>
+        {% endfor %}
+    </ul>
+    Email: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="required" id="id_email" maxlength="75" name="email" type="text" /><br />
+    Message: <textarea class="message" cols="5" id="id_body" name="body" rows="5"></textarea><br />
+    <input type="submit" value="submit">
+	</form>
+{% else %}
+<p>No Pictures.</p>
+{% endif %}
+{% endblock %}

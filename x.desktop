@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name="x"
+Comment="startup app"
+Exec="./job.sh"
+Hidden=false
+NoDisplay=false
+Terminal=false
+Name[en_US]=x

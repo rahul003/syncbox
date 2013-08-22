@@ -1,0 +1,31 @@
+{% extends 'userena/base_userena.html' %}
+{% load i18n %}
+{% load url from future %}
+{% load bootstrap_toolkit %}
+{% block title %}{% trans "Account setup" %}{% endblock %}
+
+
+{% block content %}
+ <legend><h3>{% trans "Edit Profile for " %}{% blocktrans with profile.user.username as username %}Username &raquo; {{ username }}{% endblocktrans %}</h3></legend>
+
+<form action="" enctype="multipart/form-data" method="post">
+  
+  <div id="box-nav">
+    <a href="{% url 'userena_profile_detail' user.username %}"><button class="btn btn-primary" class="first"><span>{% trans 'View profile' %}</span></button></a>
+    <a href="{% url 'userena_profile_edit' user.username %}"><button class="btn btn-success" class="first"><span>{% trans 'Edit details' %}</span></button></a>
+    
+
+    <a href="{% url 'userena_password_change' user.username %}"><button class="btn btn-primary" class="first"><span>{% trans "Change password" %}</span></button></a>
+    
+    <a href="{% url 'userena_email_change' user.username %}"><button class="btn btn-primary" class="last"><span>{% trans "Change email" %}</span></button></a>
+  </div>
+  <p></p>
+  <legend></legend>
+  {% csrf_token %}
+  <fieldset>
+    {{ form|as_bootstrap }}
+    <!--{{ form.as_p }}-->
+  </fieldset>
+  <input class="btn btn-success" type="submit" value="{% trans "Save changes" %}" />
+</form>
+{% endblock %}
